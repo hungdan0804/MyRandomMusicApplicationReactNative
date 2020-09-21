@@ -12,6 +12,9 @@
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
     "expo": "~38.0.8",
+    "expo-av": "~8.2.1",
+    "expo-font": "^8.2.2",
+    "expo-linear-gradient": "^8.2.1",
     "expo-status-bar": "^1.0.2",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
@@ -20,9 +23,15 @@
     "react-native-paper": "^4.1.0",
     "react-native-reanimated": "~1.9.0",
     "react-native-screens": "^2.10.1",
+    "react-native-slider": "^0.11.0",
+    "react-native-svg": "^12.1.0",
     "react-native-tab-view": "^2.15.1",
     "react-native-vector-icons": "^7.0.0",
-    "react-native-web": "~0.11.7"
+    "react-native-video": "^5.1.0-alpha8",
+    "react-native-web": "~0.11.7",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "rnpm": "^1.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
