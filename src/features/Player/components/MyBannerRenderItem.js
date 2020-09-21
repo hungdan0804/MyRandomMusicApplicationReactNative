@@ -16,7 +16,7 @@ const SPACER_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 const SPACING = 10;
 const AnimatedIcon = Animated.createAnimatedComponent(MaterialCommunityIcons);
 
-function MyBannerRenderItem({ item, index, scrollXAnimated }) {
+function MyBannerRenderItem({ item, index, scrollXAnimated, onFavorite }) {
   if (!item.albumArtUrl) {
     return (
       <View
@@ -26,6 +26,10 @@ function MyBannerRenderItem({ item, index, scrollXAnimated }) {
       />
     );
   }
+
+  const handleOnFavorite = () => {
+    onFavorite(item, index);
+  };
 
   const inputRange = [
     (index - 2) * ITEM_SIZE,
@@ -60,6 +64,7 @@ function MyBannerRenderItem({ item, index, scrollXAnimated }) {
           color={colors.red_light}
           size={48}
           style={{ opacity }}
+          onPress={handleOnFavorite}
         />
       </Animated.View>
     </View>

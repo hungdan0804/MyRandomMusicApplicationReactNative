@@ -56,9 +56,11 @@ function index({ navigation }) {
       <HomeHeader />
       <View style={styles.mainContent}>
         <HomeLeftTab myTab={tab} onChange={handleOnTabChange} />
-        {/* {tab == 0 ? <HomeCategory /> : <HomeFavorite />} */}
-        <HomeCategory myTab={tab} onClick={handleCategoryItemChange} />
-        <HomeFavorite myTab={tab} />
+        {tab == 0 ? (
+          <HomeCategory myTab={tab} onClick={handleCategoryItemChange} />
+        ) : (
+          <HomeFavorite myTab={tab} />
+        )}
       </View>
       {playbackInstance && <HomePlayer />}
     </ImageBackground>

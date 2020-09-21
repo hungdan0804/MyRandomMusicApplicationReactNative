@@ -14,6 +14,8 @@ import {
   swipeTrack,
 } from "../../actions/player";
 
+import { insertFavoriteSong } from "../../actions/favorite";
+
 const { width, height } = Dimensions.get("screen");
 
 const ITEM_SIZE = width * 0.6;
@@ -33,6 +35,11 @@ function index({ navigation }) {
   const seek = useCallback((time) => {
     time = Math.round(time);
     setCurPos(time);
+  }, []);
+
+  const handleOnClickFavorite = useCallback((item, index) => {
+    const action = insertFavoriteSong(item);
+    dispatch(action);
   }, []);
 
   const handleOnItemChange = useCallback(async (index) => {
@@ -192,6 +199,7 @@ function index({ navigation }) {
         listBanner={listBanner}
         data={tracks}
         selectedTrack={selectedTrack.current}
+        insertFavoriteTrack={handleOnClickFavorite}
         onItemChange={handleOnItemChange}
       />
       <PlayerSlider

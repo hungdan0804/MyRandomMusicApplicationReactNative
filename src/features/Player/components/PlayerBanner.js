@@ -7,7 +7,13 @@ const { width, height } = Dimensions.get("screen");
 
 const ITEM_SIZE = width * 0.6;
 
-function PlayerBanner({ data, onItemChange, selectedTrack, listBanner }) {
+function PlayerBanner({
+  data,
+  onItemChange,
+  selectedTrack,
+  listBanner,
+  insertFavoriteTrack,
+}) {
   const [tracks, setTracks] = useState([]);
   const scrollXAnimated = useRef(new Animated.Value(0)).current;
   const currentIndex = useRef(selectedTrack);
@@ -44,6 +50,7 @@ function PlayerBanner({ data, onItemChange, selectedTrack, listBanner }) {
               item={item}
               index={index}
               scrollXAnimated={scrollXAnimated}
+              onFavorite={insertFavoriteTrack}
             />
           );
         }}
